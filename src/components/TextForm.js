@@ -41,10 +41,10 @@ export default function TextForm(props) {
   return (
     <>
   <div style={{color:props.mode==='light'?'#241d3e':'white'}}>
-    <h1>{props.heading} </h1>
+    <h1 style={{paddingLeft:"5%"}}>{props.heading} </h1>
     <div className="container">
     <label for="myBox" className="form-label"></label>
-    <textarea className="form-control" id="myBox" value={text} style={{backgroundColor:props.mode==='light'?'white':'grey',color:props.mode==='light'?'#241d3e':'white' }}onChange={handleOnChange} rows="10"></textarea>
+    <textarea className="form-control" id="myBox" value={text} style={{backgroundColor:props.mode==='light'?'white':'#13466e',color:props.mode==='light'?'#241d3e':'white' }}onChange={handleOnChange} rows="10"></textarea>
     </div>
     <button className="button mx-2 my-2" onClick={handleUpClick}>ConvertToUpperCase</button>
     <button className="button mx-2 my-2" onClick={handleLoClick}>ConvertToLowerCase</button>
@@ -55,7 +55,7 @@ export default function TextForm(props) {
     <div className="container my-2"  style={{color:props.mode==='light'?'#241d3e':'white'}}>
       <h2>Your Text Summary has</h2>
       <p>Total of <b> {text.split(" ").filter((element)=>{return element.length!==0}).length} </b> words and <b>{text.length}</b> characters</p>
-      <p><b>{0.008*text.split(" ").length}</b> Minutes to read </p>
+      <p><b>{0.008*text.split(" ").filter((element)=>{return element.length!==0}).length}</b> Minutes to read </p>
       <h3>Preview</h3>
       <p>{text.length>0? text:"Enter Something to preview it here"}</p>
     </div>
