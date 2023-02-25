@@ -46,11 +46,11 @@ export default function TextForm(props) {
     <label for="myBox" className="form-label"></label>
     <textarea className="form-control" id="myBox" value={text} style={{backgroundColor:props.mode==='light'?'white':'#13466e',color:props.mode==='light'?'#241d3e':'white' }}onChange={handleOnChange} rows="10"></textarea>
     </div>
-    <button className="button mx-2 my-2" onClick={handleUpClick}>ConvertToUpperCase</button>
-    <button className="button mx-2 my-2" onClick={handleLoClick}>ConvertToLowerCase</button>
-    <button className="button mx-2 my-2" onClick={handleClearClick}>ClearText</button>
-    <button className="button mx-2 my-2" onClick={handleCopy}>CopyText</button>
-    <button className="button mx-2 my-2" onClick={handleExtraSpace}>RemoveExtraSpace</button>
+    <button disabled={text.length ===0} className="button mx-2 my-2" onClick={handleUpClick}>ConvertToUpperCase</button>
+    <button disabled={text.length ===0} className="button mx-2 my-2" onClick={handleLoClick}>ConvertToLowerCase</button>
+    <button disabled={text.length ===0} className="button mx-2 my-2" onClick={handleClearClick}>ClearText</button>
+    <button disabled={text.length ===0} className="button mx-2 my-2" onClick={handleCopy}>CopyText</button>
+    <button disabled={text.length ===0} className="button mx-2 my-2" onClick={handleExtraSpace}>RemoveExtraSpace</button>
     </div>
     <div className="container my-2"  style={{color:props.mode==='light'?'#241d3e':'white'}}>
       <h2>Your Text Summary has</h2>
